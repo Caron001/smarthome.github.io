@@ -12,20 +12,34 @@
     <button onclick="setAutoMode()">Auto Mode</button>
     <button onclick="setManualMode()">Manual Mode</button>
     <script>
+      const esp8266Ip = "http://192.168.88.157"; // Ganti dengan alamat IP ESP8266 Anda
+
       function turnOn() {
-        fetch("/led/on");
+        fetch(`${esp8266Ip}/led/on`)
+          .then((response) => response.text())
+          .then((data) => console.log(data))
+          .catch((error) => console.error("Error:", error));
       }
 
       function turnOff() {
-        fetch("/led/off");
+        fetch(`${esp8266Ip}/led/off`)
+          .then((response) => response.text())
+          .then((data) => console.log(data))
+          .catch((error) => console.error("Error:", error));
       }
 
       function setAutoMode() {
-        fetch("/mode/auto");
+        fetch(`${esp8266Ip}/mode/auto`)
+          .then((response) => response.text())
+          .then((data) => console.log(data))
+          .catch((error) => console.error("Error:", error));
       }
 
       function setManualMode() {
-        fetch("/mode/manual");
+        fetch(`${esp8266Ip}/mode/manual`)
+          .then((response) => response.text())
+          .then((data) => console.log(data))
+          .catch((error) => console.error("Error:", error));
       }
     </script>
   </body>
