@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Document</title>
+    <title>Smarthome</title>
   </head>
   <body>
     <h1>LED Control</h1>
@@ -12,5 +11,22 @@
     <button onclick="turnOff()">Turn LED OFF</button>
     <button onclick="setAutoMode()">Auto Mode</button>
     <button onclick="setManualMode()">Manual Mode</button>
+    <script>
+      function turnOn() {
+        fetch("/led/on");
+      }
+
+      function turnOff() {
+        fetch("/led/off");
+      }
+
+      function setAutoMode() {
+        fetch("/mode/auto");
+      }
+
+      function setManualMode() {
+        fetch("/mode/manual");
+      }
+    </script>
   </body>
 </html>
